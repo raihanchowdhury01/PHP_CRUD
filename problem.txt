@@ -1,0 +1,3 @@
+My major problem is I can't update my data as I want. 
+I can't understand, when I was click on Edit button, I've got id. But I if I'm clicking on update button after data set into input field, I'm facing to an error like this:-
+Warning: Undefined array key "id" in E:\Software File\Xampp main file\xammp file 2\htdocs\sms_crud\update.php on line 5

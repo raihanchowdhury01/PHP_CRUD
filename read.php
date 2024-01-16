@@ -6,23 +6,29 @@ if ($res) {
     echo "connected";
     // $values = mysqli_fetch_array($res);
     // foreach ($values as $value) {
-        while($value = mysqli_fetch_array($res)){
 ?>
-        <table>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Category Name</th>
+            <th>Category Date</th>
+            <th>Action</th>
+        </tr>
+        <?php
+        while ($value = mysqli_fetch_array($res)) {
+        ?>
+
             <tr>
-                <th>ID</th>
-                <th>Category Name</th>
-                <th>Category Date</th>
-                <th>Action</th>
+                <td><?= $value['id'] ?></td>
+                <td><?= $value['category_name'] ?></td>
+                <td><?= $value['category_date'] ?></td>
+                <td><a href="update.php?id=<?= $value['id'] ?>">Edit</a></td>
             </tr>
-            <tr>
-                <td><?=$value['id']?></td>
-                <td><?=$value['category_name']?></td>
-                <td><?=$value['category_date']?></td>
-                <td><a href="update.php?id=<?= $value['id']?>">Edit</a></td>
-            </tr>
-        </table>
+   
 <?php
+        }
+        ?>
+        </table>
+        <?php
     }
-}
 ?>
